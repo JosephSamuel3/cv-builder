@@ -1,14 +1,32 @@
-const FormInput = ({ label, type = "text", name, value, onchange}) => {
+const FormInput = ({ 
+    label, 
+    type = "text", 
+    name, 
+    value, 
+    onChange, 
+    placeholder,
+    isTextarea = false
+}) => {
     return (
         <label>
             {label}
-            <input 
-                type={type}
-                name={name}
-                value={value}
-                onchange={onchange}
-                placeholder={label} 
-            />
+            
+            {isTextarea ? (
+                <textarea
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={placeholder}
+                />
+            ) : (
+                <input 
+                    type={type}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={placeholder} 
+                />
+            )} 
         </label>
     )
 }

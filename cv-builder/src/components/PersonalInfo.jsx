@@ -2,17 +2,17 @@ import FormInput from "./FormInput";
 
 
 
-const PersonalInfoForm = ({ infoData, onUpdate, onDel }) => {
+const PersonalInfoForm = ({ infoData, update, del }) => {
     const handleChange = (e) => {
         const {name, value} = e.target
-        onUpdate({ ...infoData, [name]: value })
+        update({ ...infoData, [name]: value })
     }
     
     return (
         <div className="personalInfo-div">
             <div className="section-description">
-                <h3>Personal Detials</h3>
-                <button className="del-btn" onClick={onDel}>Delete</button>
+                <h3>Personal Information</h3>
+                <button className="del-btn" onClick={del}>Delete</button>
             </div>
             
             <div className="personalInfo-form">
@@ -74,19 +74,17 @@ const PersonalInfoForm = ({ infoData, onUpdate, onDel }) => {
   );
 };
 
-const PersonalInfo = ({ infoDatas, onUpdate, onDel, onAdd }) => {
+const PersonalInfo = ({ infoDatas, update }) => {
   return (
     <div className="personalInfo-section">
-      <h2>PersonalInfo</h2>
       {infoDatas.map((infoData) => (
         <PersonalInfoForm
           key={infoData.id}
           infoData={infoData}
-          onUpdate={(updatedData) => onUpdate(infoData.id, updatedData)}
-          onDel={() => onDel(infoData.id)}
+          update={(updatedData) => update(infoData.id, updatedData)}
+          del={() => del(infoData.id)}
         />
       ))}
-      <button onClick={onAdd}>+ Add PersonalInfo</button>
     </div>
   );
 };

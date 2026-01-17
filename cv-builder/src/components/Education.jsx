@@ -2,17 +2,17 @@ import FormInput from "./FormInput";
 
 
 
-const EducationForm = ({ eduData, onUpdate, onDel }) => {
+const EducationForm = ({ eduData, update, del }) => {
     const handleChange = (e) => {
-        const {name, value} = e.target
-        onUpdate({ ...eduData, [name]: value })
+        const unpdateItem = { ...eduData, [e.target.name]: e.target.value }
+        update(eduData.id, unpdateItem)
     }
     
     return (
         <div className="Education-div">
             <div className="section-description">
                 <h3>Education</h3>
-                <button className="del-btn" onClick={onDel}>Delete</button>
+                <button className="del-btn" onClick={del}>Delete</button>
             </div>
             
             <div className="education-form">
@@ -37,7 +37,7 @@ const EducationForm = ({ eduData, onUpdate, onDel }) => {
                     name="startDate"
                     value={eduData.startDate || ''}
                     onChange={handleChange}
-                    placeholder= "start date"
+                    placeholder= "MM/YYYY"
                 />
 
                 <FormInput
@@ -45,7 +45,7 @@ const EducationForm = ({ eduData, onUpdate, onDel }) => {
                     name="endDate"
                     value={eduData.endDate || ''}
                     onChange={handleChange}
-                    placeholder="end date"
+                    placeholder="MM/YYYY or present"
                 />
 
                 <FormInput
@@ -60,18 +60,18 @@ const EducationForm = ({ eduData, onUpdate, onDel }) => {
     );
 };
 
-const Education = ({ eduDatas, onUpdate, onDel, onAdd }) => {
+const Education = ({ eduDatas, update, del, add }) => {
   return (
     <div className="education-section">
       {eduDatas.map((eduData) => (
         <EducationForm
           key={eduData.id}
           eduData={eduData}
-          onUpdate={(updatedData) => onUpdate(eduData.id, updatedData)}
-          onDel={() => onDel(eduData.id)}
+          update={update}
+          del={() => del(eduData.id)}
         />
       ))}
-      <button onClick={onAdd}>Add Education</button>
+      <button onClick={add}>+ Add Education</button>
     </div>
   );
 };

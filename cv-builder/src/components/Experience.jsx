@@ -2,17 +2,17 @@ import FormInput from "./FormInput";
 
 
 
-const ExperienceForm = ({ expData, onUpdate, onDel }) => {
+const ExperienceForm = ({ expData, update, del }) => {
   const handleChange = (e) => {
     const {name, value} = e.target
-    onUpdate({ ...expData, [name]: value })
+    update({ ...expData, [name]: value })
   }
   
   return (
     <div className="experince-div">
       <div className="section-description">
         <h3>Experience</h3>
-        <button className="del-btn" onClick={onDel}>Delete</button>
+        <button className="delete-btn" onClick={del}>Delete</button>
       </div>
       
       <div className="experience-form">
@@ -60,26 +60,27 @@ const ExperienceForm = ({ expData, onUpdate, onDel }) => {
           label="Description:"
           name="description"
           value={expData.description || ''}
-          onchange={handleChange}
+          onChange={handleChange}
           placeholder="Describe your responsiblities"
+          isTextarea
         />
       </div>
     </div>
   );
 };
 
-const Experience = ({ expDatas, onUpdate, onDel, onAdd }) => {
+const Experience = ({ expDatas, update, del, add }) => {
   return (
     <div className="experience-section">
       {expDatas.map((expData) => (
         <ExperienceForm
           key={expData.id}
           expData={expData}
-          onUpdate={(updatedData) => onUpdate(expData.id, updatedData)}
-          onDel={() => onDel(expData.id)}
+          update={(updatedData) => update(expData.id, updatedData)}
+          del={() => del(expData.id)}
         />
       ))}
-      <button onClick={onAdd}>+ Add Work Experience</button>
+      <button onClick={add}>+ Add Work Experience</button>
     </div>
   );
 };
