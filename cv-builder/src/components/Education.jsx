@@ -54,6 +54,7 @@ const EducationForm = ({ eduData, update, del }) => {
                     value={eduData.location || ''}
                     onChange={handleChange}
                     placeholder="Location"
+                    fullWidth={true}
                 />
             </div>
         </div>

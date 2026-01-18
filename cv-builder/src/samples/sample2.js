@@ -49,27 +49,10 @@ const sample2_CV = {
   ],
 
   skills: {
-    langauges: ["JavaScript", "HTML", "CSS"],
-    frameWorks: ["React"],
+    languages: ["JavaScript", "HTML", "CSS"],
+    frameworks: ["React"],
   },
 };
 
-const empty2_CV = {
-  personalInformation: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    linkedIn: "",
-    github: "",
-  },
-  experience: [],
-  project: [],
-  education: [],
-  skills: {
-    langauges: [],
-    frameWorks: [],
-  },
-};
 
-export { sample2_CV, empty2_CV };
+export default sample2_CV;

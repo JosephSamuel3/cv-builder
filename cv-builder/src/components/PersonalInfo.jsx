@@ -58,6 +58,7 @@ const PersonalInfo = ({ infoData, update }) => {
                     value={infoData.github || ''}
                     onChange={handleChange}
                     placeholder="https://github.com/johndoe"
+                    fullWidth={true}
                 />
 
                 <FormInput
@@ -67,6 +68,7 @@ const PersonalInfo = ({ infoData, update }) => {
                     value={infoData.linkedin || ''}
                     onChange={handleChange}
                     placeholder="https://linkedin.com/in/johndoe"
+                    fullWidth={true}
                 />
             </div>
         </div>

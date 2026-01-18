@@ -21,6 +21,7 @@ const ProjectForm = ({ projectData, update, del }) => {
           value={projectData.title || ''}
           onChange={handleChange}
           placeholder="company Name"
+          fullWidth
         />
 
         <FormInput
@@ -29,6 +30,8 @@ const ProjectForm = ({ projectData, update, del }) => {
           value={projectData.description || ''}
           onChange={handleChange}
           placeholder="Describe your responsiblities"
+          isTextarea
+          fullWidth
         />
 
         <FormInput
@@ -37,7 +40,7 @@ const ProjectForm = ({ projectData, update, del }) => {
           value={(projectData.technologies || []).join(", ")}
           onChange={handleChange}
           placeholder="list the technologies used"
-          isTextarea
+          fullWidth
         />
 
         <FormInput
@@ -47,6 +50,7 @@ const ProjectForm = ({ projectData, update, del }) => {
           value={projectData.link || ''}
           onChange={handleChange}
           placeholder="link to your project"
+          fullWidth
         />
       </div>
     </div>

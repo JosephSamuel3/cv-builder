@@ -54,6 +54,7 @@ const ExperienceForm = ({ expData, update, del }) => {
           value={expData.location || ''}
           onChange={handleChange}
           placeholder="City, Country"
+          fullWidth={true}
         />
 
         <FormInput
@@ -63,6 +64,7 @@ const ExperienceForm = ({ expData, update, del }) => {
           onChange={handleChange}
           placeholder="Describe your responsiblities"
           isTextarea
+          fullWidth={true}
         />
       </div>
     </div>

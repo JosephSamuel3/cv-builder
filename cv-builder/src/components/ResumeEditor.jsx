@@ -2,26 +2,26 @@ import { useState } from "react";
 import NavButtons from "./NavButtons";
 import RenderInputs from "./RenderInputs";
 
-const ResumeEditor = ({ cvData, setCvData }) => {
+const ResumeEditor = ({ cvData, setCVData }) => {
     const [activeNav, setActiveNav] = useState("personalInformation");
 
   // -------- Shared helpers --------
   const updateSection = (section, data) => {
-    setCvData(prev => ({
+    setCVData(prev => ({
       ...prev,
       [section]: data,
     }));
   };
 
   const addItem = (section, newItem) => {
-    setCvData(prev => ({
+    setCVData(prev => ({
       ...prev,
       [section]: [...prev[section], newItem],
     }));
   };
 
   const updateItem = (section, id, updatedItem) => {
-    setCvData(prev => ({
+    setCVData(prev => ({
       ...prev,
       [section]: prev[section].map(item =>
         item.id === id ? updatedItem : item
@@ -30,7 +30,7 @@ const ResumeEditor = ({ cvData, setCvData }) => {
   };
 
   const deleteItem = (section, id) => {
-    setCvData(prev => ({
+    setCVData(prev => ({
       ...prev,
       [section]: prev[section].filter(item => item.id !== id),
     }));

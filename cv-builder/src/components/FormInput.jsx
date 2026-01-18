@@ -5,10 +5,11 @@ const FormInput = ({
     value, 
     onChange, 
     placeholder,
-    isTextarea = false
+    isTextarea = false,
+    fullWidth = false
 }) => {
     return (
-        <label>
+        <label className={fullWidth ? "full-width" : ""}>
             {label}
             
             {isTextarea ? (

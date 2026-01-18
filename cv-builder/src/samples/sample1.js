@@ -59,22 +59,6 @@ const sample1_CV = {
   },
 };
 
-const empty1_CV = {
-  personalInformation: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    linkedIn: "",
-    github: "",
-  },
-  experience: [],
-  project: [],
-  education: [],
-  skills: {
-    languages: [],
-    frameworks: [],
-  },
-};
 
-export { sample1_CV, empty1_CV };
+
+export default sample1_CV;

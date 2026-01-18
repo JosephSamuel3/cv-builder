@@ -19,6 +19,7 @@ const Skills = ({ skillData, update }) => {
                     value={(skillData.languages || []).join(', ')}
                     onChange={handleChange}
                     placeholder="e.g., JavaScript, Python, HTML"
+                    fullWidth
                 />
 
                 <FormInput
@@ -27,6 +28,7 @@ const Skills = ({ skillData, update }) => {
                     value={(skillData.frameworks || []).join(', ')}
                     onChange={handleChange}
                     placeholder="e.g., React, Node.js, Django"
+                    fullWidth
                 />
             </div>
         </div>
