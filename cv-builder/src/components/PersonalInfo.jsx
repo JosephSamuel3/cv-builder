@@ -2,7 +2,7 @@ import FormInput from "./FormInput";
 
 
 
-const PersonalInfoForm = ({ infoData, update, del }) => {
+const PersonalInfo = ({ infoData, update }) => {
     const handleChange = (e) => {
         const {name, value} = e.target
         update({ ...infoData, [name]: value })
@@ -12,7 +12,6 @@ const PersonalInfoForm = ({ infoData, update, del }) => {
         <div className="personalInfo-div">
             <div className="section-description">
                 <h3>Personal Information</h3>
-                <button className="del-btn" onClick={del}>Delete</button>
             </div>
             
             <div className="personalInfo-form">
@@ -74,19 +73,6 @@ const PersonalInfoForm = ({ infoData, update, del }) => {
   );
 };
 
-const PersonalInfo = ({ infoDatas, update }) => {
-  return (
-    <div className="personalInfo-section">
-      {infoDatas.map((infoData) => (
-        <PersonalInfoForm
-          key={infoData.id}
-          infoData={infoData}
-          update={(updatedData) => update(infoData.id, updatedData)}
-          del={() => del(infoData.id)}
-        />
-      ))}
-    </div>
-  );
-};
+
 
 export default PersonalInfo;

@@ -1,6 +1,6 @@
 
 const NAVS = [
-   {id: "personal-info", label: "Personal information"},
+   {id: "personalInformation", label: "Personal information"},
    {id: "experience", label: "Work experience"},
    {id: "project", label: "Projects"},
    {id: "education", label: "Education"},

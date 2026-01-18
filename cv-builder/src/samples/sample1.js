@@ -54,8 +54,8 @@ const sample1_CV = {
   ],
 
   skills: {
-    langauges: ["JavaScript", "HTML", "CSS", "Python"],
-    frameWorks: ["React", "Node.js"],
+    languages: ["JavaScript", "HTML", "CSS", "Python"],
+    frameworks: ["React", "Node.js"],
   },
 };
 
@@ -72,8 +72,8 @@ const empty1_CV = {
   project: [],
   education: [],
   skills: {
-    langauges: [],
-    frameWorks: [],
+    languages: [],
+    frameworks: [],
   },
 };
 

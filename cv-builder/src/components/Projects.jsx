@@ -17,8 +17,8 @@ const ProjectForm = ({ projectData, update, del }) => {
       <div className="project-form">
         <FormInput
           label="Project title:"
-          name="company"
-          value={projectData.company || ''}
+          name="title"
+          value={projectData.title || ''}
           onChange={handleChange}
           placeholder="company Name"
         />
@@ -27,15 +27,15 @@ const ProjectForm = ({ projectData, update, del }) => {
           label="Description:"
           name="description"
           value={projectData.description || ''}
-          onchange={handleChange}
+          onChange={handleChange}
           placeholder="Describe your responsiblities"
         />
 
         <FormInput
           label="Technologies:"
           name="technologies"
-          value={projectData.technologies || ''}
-          onchange={handleChange}
+          value={(projectData.technologies || []).join(", ")}
+          onChange={handleChange}
           placeholder="list the technologies used"
           isTextarea
         />
@@ -45,7 +45,7 @@ const ProjectForm = ({ projectData, update, del }) => {
           type="url"
           name="link"
           value={projectData.link || ''}
-          onchange={handleChange}
+          onChange={handleChange}
           placeholder="link to your project"
         />
       </div>
