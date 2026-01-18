@@ -19,6 +19,26 @@ const ResumePreview = ({ cvData }) => {
     });
   };
 
+    const formatPhoneNumber = (value) => {
+        if (!value) return "";
+
+        // Remove all non-numeric characters
+        const digits = value.replace(/\D/g, "");
+
+        // US number (10 digits)
+        if (digits.length === 10) {
+            return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+        }
+
+        // US number with country code (11 digits starting with 1)
+        if (digits.length === 11 && digits.startsWith("1")) {
+            return `+1 (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
+        }
+
+        return value;
+    };
+
+
   return (
     <div className="view">
       <div className="resume-preview">
@@ -33,7 +53,7 @@ const ResumePreview = ({ cvData }) => {
 
           <div className="resume-contact">
             {personalInformation.phone && (
-              <span>{personalInformation.phone}</span>
+              <span>{formatPhoneNumber(personalInformation.phone)}</span>
             )}
             {personalInformation.email && (
               <span>{personalInformation.email}</span>
